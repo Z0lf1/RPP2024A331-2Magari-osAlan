@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABM Personas</title>
+    <link rel="stylesheet"  href="style.css">
+</head>
+<body>
+    <div id="form-datos">
+        <h2>Administración de Personas</h2>
+
+        <div>
+            <label for="filtro-tipo-persona">Filtrar por Tipo de Persona:</label>
+            <select id="filtro-tipo-persona">
+                <option value="todos">Todos</option>
+                <option value="Futbolista">Futbolista</option>
+                <option value="Profesional">Profesional</option>
+            </select>
+        </div>
+
+        <div>
+            <label><input type="checkbox" id="col-id" checked> ID</label>
+            <label><input type="checkbox" id="col-nombre" checked> Nombre</label>
+            <label><input type="checkbox" id="col-apellido" checked> Apellido</label>
+            <label><input type="checkbox" id="col-edad" checked> Edad</label>
+            <label><input type="checkbox" id="col-equipo" checked> Equipo</label>
+            <label><input type="checkbox" id="col-posicion" checked> Posicion</label>
+            <label><input type="checkbox" id="col-cantidadGoles" checked> Cantidad de goles</label>
+            <label><input type="checkbox" id="col-titulo" checked> Titulo</label>
+            <label><input type="checkbox" id="col-facultad" checked> Facultad</label>
+            <label><input type="checkbox" id="col-anioGraduacion" checked> Año de graduacion</label>
+        </div>
+    
+        <table id="tabla-datos">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Edad</th>
+                    <th>Equipo</th>
+                    <th>Posicion</th>
+                    <th>Cantidad de Goles</th>
+                    <th>Titulo</th>
+                    <th>Facultad</th>
+                    <th>Año de graduacion</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    
+        <button id="calcular-promedio">Calcular Edad Promedio</button>
+        <p>Edad Promedio: <span id="edad-promedio">0</span> Años</p>
+    
+        <button id="agregar-persona">Agregar Persona</button>
+    </div>
+
+<form id="form-abm" style="display: none;">
+    <h2>Formulario ABM de Personas</h2>
+
+    <label for="id">ID:</label>
+    <input type="number" id="id" name="id" readonly><br>
+
+    <label for="tipo-persona">Tipo de Persona:</label>
+    <select id="tipo-persona" name="tipo-persona">
+        <option value="Futbolista">Futbolista</option>
+        <option value="Profesional">Profesional</option>
+    </select><br>
+
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre"><br>
+
+    <label for="apellido">Apellido:</label><br>
+    <input type="text" id="apellido" name="apellido"><br>
+
+    <label for="edad">Edad:</label><br>
+    <input type="number" id="edad" name="edad"><br>
+
+    <div id="futbolista-fields" style="display: none;">
+        <label for="equipo">Equipo:</label>
+        <input type="text" id="equipo" name="equipo"><br>
+
+        <label for="posicion">Posicion:</label>
+        <input type="text" id="posicion" name="posicion"><br>
+
+        <label for="cantidadGoles">Goles (cantidad):</label>
+        <input type="number" id="cantidadGoles" name="cantidadGoles"><br>
+    </div>
+
+    <div id="profesional-fields" style="display: none;">
+        <label for="titulo">Titulo:</label><br>
+        <input type="text" id="titulo" name="titulo"><br>
+
+        <label for="facultad">Facultad:</label><br>
+        <input type="text" id="facultad" name="facultad"><br>
+
+        <label for="anioGraduacion">Año de Graduacion:</label>
+        <input type="number" id="anioGraduacion" name="anioGraduacion"><br>
+
+    </div>
+
+    <div id="error-mensaje" style="display: none; color: red; border: 1px solid red; padding: 10px; margin-top: 10px;"></div>
+
+    <button id="guardar" type="submit">Agregar</button>
+    <button id="eliminar" type="button" style="display: none;">Eliminar</button>
+    <button id="cancelar" type="button">Cancelar</button>
+    
+</form>
+
+    <script type="module" src="clases.js"></script>
+    <script type="module" src="functions.js"></script>
+    <script type="module" src="script.js"></script>
+
+</body>
+</html>
